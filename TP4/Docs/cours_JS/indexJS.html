@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu JavaScript - TP4</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+            max-width: 800px;
+            width: 90%;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .titre-joli {
+            text-align: center;
+            color: #2c3e50;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #bdc3c7;
+            margin-bottom: 30px;
+        }
+
+        .menu-boutons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .bouton-lien {
+            display: block;
+            width: 80%;
+            max-width: 300px;
+            padding: 15px 20px;
+            background-color: #2980b9;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .bouton-lien:hover {
+            background-color: #3498db;
+            transform: translateY(-3px);
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        p {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 40px;
+        }
+
+        .retour {
+            margin-top: 10px;
+            text-decoration: none;
+            color: #2980b9;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        
+        <h1 class="titre-joli">Accès au module JavaScript</h1>
+        
+        <p>
+            Bienvenue dans l'espace dédié à l'apprentissage de JS. Sélectionnez la section que vous souhaitez consulter :
+        </p>
+        
+        <div class="menu-boutons">
+            <a href="COURS/coursTP4.html" class="bouton-lien">Cours de JavaScript</a>
+            <a href="TP/Travail_PersoTP4.html" class="bouton-lien">TP de JavaScript</a>
+            <a href="../../TP4.html"class="bouton-lien">Retour au TP4</a>
+            <a href="../../../index.html" class="bouton-lien">Retour accueil</a>
+            
+        </div>
+
+        
+        
+    </div> 
+
+</body> 
+</html>

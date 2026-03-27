@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>TP8 : Les Tableaux</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .header-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-weight: bold;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .box {
+            border: 1px solid black;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: white;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .footer-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            font-size: 0.9em;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .retour-sommaire {
+            display: block;
+            text-align: right;
+            font-size: 0.8em;
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        th,
+        td {
+            border: 1px solid #333;
+            padding: 5px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul ul {
+            padding-left: 20px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        pre {
+            margin: 15px 0;
+            background-color: #f4f4f4;
+            padding: 10px;
+            overflow-x: auto;
+        }
+
+        a {
+            color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-row">
+        <span>Travail PersoTP4</span>
+    </div>
+
+    <div class="header-row">
+        <a href="mailto:prof@ecole.fr?subject=TP8%20Les%20Tableaux">Une question ?</a>
+        <a href="../indexJS.html">Retour Cours et TP JS</a>
+    </div>
+
+    <div class="box" id="sommaire">
+        <p>Sommaire</p>
+        <ul>
+            <li>
+                <a href="#intro">1. Introduction</a>
+            </li>
+            <li>
+                <a href="#exercices">2. Exercices</a>
+                <ul>
+                    <li><a href="#ex1">2.1 Exercice 1</a></li>
+                    <li><a href="#ex2">2.2 Exercice 2</a></li>
+                    <li><a href="#ex3">2.3 Exercice 3</a></li>
+                    <li><a href="#ex4">2.4 Exercice 4</a></li>
+                    <li><a href="#ex5">2.5 Exercice 5</a></li>
+                    <li><a href="#ex6">2.6 Exercice 6</a></li>
+                    <li><a href="#ex7">2.7 Exercice 7</a></li>
+                    <li><a href="#ex8">2.8 Exercice 8</a></li>
+                    <li><a href="#ex9">2.9 Exercice 9</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="box" style="text-align: left;">
+        <p>Contenu du cours</p>
+
+        <h1>TP8 : LES TABLEAUX</h1>
+
+        <h2 id="intro">1. INTRODUCTION</h2>
+        <p>Dans ce TP, il est demandé d'écrire des fonctions dites utilitaires permettant de travailler avec les tableaux. Ces fonctions seront ensuite utilisables dans d'autres TP.</p>
+        <p>Le tableau utilisé contient N éléments. Interdit dans cet exercice de pouvoir ajouter, d'insérer ou supprimer une case de ce dernier. Ce tableau est déclaré de la façon suivante :</p>
+
+        <pre><code>let N = parseInt(prompt("Combien de case pour le tableau ?"));
+let A=new Array(N);
+let nbElemRempli = 0;  // le tableau contient N cases vides</code></pre>
+
+        <p>Aperçu : le tableau est vide. N cases, et toutes vides.</p>
+
+        <table>
+            <tr>
+                <th>0</th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>...</th>
+                <th>N-2</th>
+                <th>N-1</th>
+            </tr>
+            <tr>
+                <td>undefined</td>
+                <td>undefined</td>
+                <td>undefined</td>
+                <td>undefined</td>
+                <td>...</td>
+                <td>undefined</td>
+                <td>undefined</td>
+            </tr>
+        </table>
+
+        <p>Les fonctions seront codées dans un fichier .js séparé. Créer ce fichier et l'ajouter au projet.</p>
+        <p>Pour chaque fonction, respectez les 4 étapes :</p>
+        <ol>
+            <li>Boite noire : réfléchir aux entrées et aux sorties.</li>
+            <li>Dans le fichier .js coder la fonction</li>
+            <li>Ajouter le mode d'emploi de chacune des fonctions</li>
+            <li>Tester la fonction (avec l'inspecteur d'élément directement)</li>
+        </ol>
+
+        <a href="#sommaire" class="retour-sommaire">↑ Retour au sommaire</a>
+
+        <h2 id="exercices">2. EXERCICES</h2>
+
+        <h3 id="ex1">2.1 EXERCICE 1</h3>
+        <p>Écrire une fonction <code>initialiserTab1()</code> permettant d'initialiser les N cases d'un tableau avec la valeur 0. À la fin de cette fonction, on considère que toutes les cases sont remplies.</p>
+        <a href="#sommaire" class="retour-sommaire">↑ Retour au sommaire</a>
+
+        <h3 id="ex2">2.2 EXERCICE 2</h3>
+        <p>Écrire une fonction <code>initialiserTab2()</code> permettant d'initialiser les N cases d'un tableau avec une valeur passée en paramètre. À la fin de cette fonction, on considère que toutes les cases sont remplies.</p>
+        <a href="#sommaire" class="retour-sommaire">↑ Retour au sommaire</a>
+
+        <h3 id="ex3">2.3 EXERCICE 3</h3>
+        <p>Écrire une fonction <code>remplirTab1()</code> permettant de remplir les N cases d'un tableau avec des valeurs aléatoires comprises dans l'intervalle MIN et MAX. Même si ce tableau est rempli, les anciennes valeurs sont remplacées.</p>
+        <a href="#sommaire" class="retour-sommaire">↑ Retour au sommaire</a>
+
+        <h3 id="ex4">2.4 EXERCICE 4</h3>
+        <p>Écrire une fonction <code>remplirTab2()</code> permettant de remplir un certain nombre de cases du tableau sur les N possibles, avec des valeurs aléatoires comprises dans l'intervalle MIN, MAX.</p>
+        <p>Par exemple dans le tableau suivant seulement 3 cases sont remplies (nbElemRempli vaut ici 3). Avec la fonction <code>remplirTab2</code> on commence à remplir à partir de case 3 (nbElemRempli)</p>
+
+        <table>
+            <tr>
+                <th>0</th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>...</th>
+                <th>N-2</th>
+                <th>N-1</th>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>12</td>
+                <td>3</td>
+                <td>undefined</td>
+                <td>...</td>
+                <td>undefined</td>
+                <td>undefined</td>
+            </tr>
+        </table>
+
+        <p>Si le nombre de cases à remplir dépasse la capacité du tableau, on remplit jusqu'à la fin du tableau. Aucune case supplémentaire ne doit être ajoutée.</p>
+        <a href="#sommaire" class="retour-sommaire">↑ Retour au sommaire</a>
+
+        <h3 id="ex5">2.5 EXERCICE 5</h3>
+        <p>Écrire une fonction <code>afficherTab1()</code> permettant d'afficher seulement les cases remplies d'un tableau. Dans l'exemple de l'exercice 4, seulement les 3 premières cases sont affichées.</p>
+        <a href="#sommaire" class="retour-sommaire">↑ Retour au sommaire</a>
+
+        <h3 id="ex6">2.6 EXERCICE 6</h3>
+        <p>Écrire une fonction <code>afficherTab2()</code> permettant d'afficher toutes les cases d'un tableau qu'elles soient remplies ou non.</p>
+        <a href="#sommaire" class="retour-sommaire">↑ Retour au sommaire</a>
+
+        <h3 id="ex7">2.7 EXERCICE 7</h3>
+        <p>Écrire une fonction <code>afficherTab3()</code> permettant d'afficher toutes les cases d'un tableau à partir de la position DEB et ce jusqu'à la position FIN.</p>
+        <a href="#sommaire" class="retour-sommaire">↑ Retour au sommaire</a>
+
+        <h3 id="ex8">2.8 EXERCICE 8</h3>
+        <p>Écrire une fonction <code>remplirElement()</code> permettant de remplir une case avec une valeur sur la première case vide du tableau. Si le tableau est complètement rempli, l'opération est impossible. Cette fonction retourne <code>false</code> si l'opération n'a pu être effectuée, le nombre d'éléments rempli dans le cas contraire.</p>
+        <a href="#sommaire" class="retour-sommaire">↑ Retour au sommaire</a>
+
+        <h3 id="ex9">2.9 EXERCICE 9</h3>
+        <p>Écrire une fonction <code>saisirTab()</code> permettant à l'utilisateur de lui-même saisir un certain nombre d'éléments d'un tableau sur les N possibles. Les éléments sont ajoutés les uns après les autres à partir de la première case vide dans le tableau. Cette fonction retourne le nombre de cases rempli du tableau.</p>
+        <a href="#sommaire" class="retour-sommaire">↑ Retour au sommaire</a>
+    </div>
+
+    <div class="footer-row">
+        <a href="TPJS.pdf" download>Télécharger le cours</a>
+        <a href="#sommaire">Sommaire</a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+body {
+    margin: 0;
+    font-family: serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: white;
+}
+
+.zone-haut {
+    background-color: #ff5252;
+    padding: 20px;
+    text-align: center;
+}
+
+.conteneur-principal {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+}
+
+.zone-gauche,
+.zone-droite {
+    background-color: #5584ff;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.centre {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.colonnes-z {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+}
+
+.z {
+    background-color: #4cd171;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-right: 2px solid white;
+}
+
+.z:last-child {
+    border-right: none;
+}
+
+.zone-bas {
+    background-color: #ffcc00;
+    padding: 20px;
+    text-align: center;
+    border-top: 2px solid white;
+}
+
+@media (max-width: 768px) {
+    .conteneur-principal {
+        flex-direction: column;
+    }
+
+    .zone-gauche,
+    .zone-droite {
+        width: 100%;
+        min-height: 80px;
+    }
+
+    .colonnes-z {
+        flex-direction: column;
+    }
+
+    .z {
+        border-right: none;
+        border-bottom: 2px solid white;
+    }
+
+    .z:last-child {
+        border-bottom: none;
+    }
+}
+
+.menu-boutons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+.bouton-lien {
+    display: inline-block;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 8px;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.retour-portfolio {
+    background-color: #2e8ece;
+}
+
+.retour-portfolio:hover {
+    background-color: #2572a5;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    color: white;
+}
+
+.menu-boutons {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.bouton-lien {
+    background-color: #3ea0e8;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 999px;
+    text-decoration: none;
+}
+
+.bouton-lien:hover {
+    background-color: #2980b9;
+}

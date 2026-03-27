@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #eef2f7;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.page {
+    width: 90%;
+    max-width: 900px;
+    text-align: center;
+}
+
+/* HEADER */
+.header {
+    margin: 3rem 0;
+}
+
+.header h1 {
+    font-size: 2.3rem;
+    color: #2c3e50;
+}
+
+.header p {
+    color: #7f8c8d;
+    margin-top: 0.5rem;
+}
+
+/* CARDS */
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-decoration: none;
+    color: #2c3e50;
+    width: 120px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card img {
+    width: 60px;
+    margin-bottom: 0.5rem;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* BOX */
+.content {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.box {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: left;
+}
+
+.box h2 {
+    margin-bottom: 1rem;
+}
+
+.box ul {
+    padding-left: 1.5rem;
+}
+
+.box a {
+    text-decoration: none;
+    color: #3498db;
+}
+
+/* BOUTON */
+.footer {
+    margin: 2rem 0;
+}
+
+.btn {
+    background: #3498db;
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #2980b9;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}

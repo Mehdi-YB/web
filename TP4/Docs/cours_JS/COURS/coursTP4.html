@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Cours JS</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem 2rem 1rem 2rem;
+            margin-top: 1rem;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #3498db;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        nav a:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.2);
+        }
+
+        /* ===== STYLE DE LA PAGE ===== */
+        .header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+            max-width: 1000px;
+            margin-bottom: 10px;
+            font-weight: bold;
+            flex-wrap: wrap;
+        }
+
+        .box {
+            border: 1px solid black;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: white;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .footer-row {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1000px;
+            margin-top: 20px;
+            font-size: 0.9em;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .retour-sommaire {
+            display: block;
+            text-align: right;
+            font-size: 0.8em;
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul ul {
+            padding-left: 20px;
+        }
+
+        .contenu-cours {
+            text-align: left;
+        }
+
+        .contenu-cours p,
+        .contenu-cours pre,
+        .contenu-cours h2,
+        .contenu-cours h3 {
+            margin-bottom: 15px;
+        }
+
+        pre {
+            white-space: pre-wrap;
+        }
+
+        a {
+            color: #2980b9;
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            nav a {
+                width: 100%;
+                text-align: center;
+            }
+
+            .header-row,
+            .footer-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-row">
+        <span>Cours 1 : Introduction JS</span>
+    </div>
+
+    <div class="header-row">
+        <a href="mailto:prof@ecole.fr?subject=Cours%20JS">Une question ?</a>
+        <a href="../indexJS.html">Retour Cours et TP JS</a>
+    </div>
+
+    <div class="box" id="sommaire">
+        <p>Sommaire</p>
+        <ul>
+            <li>
+                <a href="#bases">1. Les bases du langages</a>
+                <ul>
+                    <li><a href="#structure">1.1 La structure de base d'un programme en javascript</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#commentaires">2. Les commentaires</a>
+            </li>
+            <li>
+                <a href="#declarations_instructions">3. Les declarations et instructions</a>
+                <ul>
+                    <li><a href="#declarations_variables">3.1 Les declaration de variables</a></li>
+                    <li><a href="#memoire">3.2 Memoire vive</a></li>
+                    <li><a href="#choix_nom">3.3 Choix du nom</a></li>
+                    <li><a href="#variables_constantes">3.4 Declaration de variables et constantes</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#types_plages">4. Les differents type et leur plage de la valeur</a>
+                <ul>
+                    <li><a href="#details_types">4.1 Details sur les differents types</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#operateurs">5. Les opérateurs</a>
+                <ul>
+                    <li><a href="#op_arithmetiques">5.1 Les opérateurs arithmétiques</a></li>
+                    <li><a href="#op_logiques">5.2 Les opérateurs logiques</a></li>
+                    <li><a href="#op_affectation">5.3 Les opérateurs d'affectation et d'incrémentation</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#entree_sortie">6. Les fonctions d'entrée/sortie</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="box contenu-cours">
+        <p>Contenu du cours</p>
+
+        <h1>LANGAGE JAVASCRIPT :</h1>
+
+        <h2 id="bases">LES BASES DU LANGAGES</h2>
+
+        <h3 id="structure">LA STRUCTURE DE BASE D'UN PROGRAMME EN JAVASCRIPT</h3>
+        <p>Lorsque le code JavaScript se trouve dans un fichier séparé (extension .js) La structure générale d'un programme écris en JavaScript est relativement simple.</p>
+        <pre><code>/* zone d'en-tête */
+
+/* déclaration des variables globales */
+Declaration1;
+Declaration2;
+
+/* définition des fonctions (mot clef function) */
+
+
+/* CORPS DU PROGRAMME */
+Instruction1;
+Instruction2;
+
+/* FIN */</code></pre>
+        <p>Même s'il est possible de déclarer nos variables à n'importe quels moments, il est conseillé de le faire en début de script pour une meilleure lisibilité du code.</p>
+        <p>Lorsque le JavaScript est écris dans une page Web la structure est différente. Dans un premier temps nous allons travailler uniquement sur la partie JavaScript. Cela donne la structure suivante :</p>
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;TODO supply a title&lt;/title&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+
+        &lt;script&gt;
+            //ici les variables globales à la page et les fonctions
+        &lt;/script&gt;
+        
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;script&gt;
+            //ici les instructions    
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        <p>Le langage HTML utilise des balises. Nous reviendrons dessus prochainement. La balise permettant d'ajouter du JavaScript est &lt;script&gt; … &lt;/script&gt;</p>
+        <p>Cette balise s'ajoute à 2 endroits particulièrement : entre les balises &lt;head&gt;&lt;/head&gt; pour les variables globales et pour les fonctions et entre &lt;body&gt;&lt;/body&gt; pour les instructions.</p>
+        <a href="#sommaire" class="retour-sommaire">↑ Retour au sommaire</a>
+
+        <h2 id="commentaires">LES COMMENTAIRES</h2>
+        <p>Les commentaires permettent une relecture de programme pour le programmeur lui-même mais aussi pour ceux qui vont relire le programme (travail en équipe). Un commentaire d’entête est nécessaire pour indiquer le nom du programmeur, la date, le nom du fichier, descriptif du programme. Les commentaires sont du texte simple et ne sont donc pas traités comme étant du code.</p>
+        <p>Ils ne seront donc pas interprétés.</p>
+        <p>2 types de commentaires sont possibles :<br>
+        • // indiquent au compilateur que le reste de la ligne est un commentaire.<br>
+        • /* ….  */ indiquent au compilateur qu’à partir de /* le texte est un commentaire jusqu’au symbole */ Permet des commentaires sur plusieurs lignes.</p>
+        <pre><code>/* * File:   HelloWorld.js
+ * Author: sgibert
+ *
+ * Created on 14 septembre 2018, 20:19
+ * * Description du programme : explique ici ce que fait ton programme 
+ */</code></pre>
+        <p>Il n'est pas utile d'associer une ligne de code avec un commentaire d'autant plus si ce dernier ne fait que dire ce que fait le code.</p>
+        <p>Exemple :</p>
+        <pre><code>// je déclare une variable x=3  : ce commentaire n'a aucun intérêt
+// il vaut mieux expliquer à quoi sert la variable x dans notre code.
+var x=3;</code></pre>
+        <a href="#sommaire" class="retour-sommaire">↑ Retour au sommaire</a>
+
+        <h2 id="declarations_instructions">LES DECLARATIONS ET INSTRUCTIONS</h2>
+        <p>Une instruction ou une déclaration se termine toujours par un point-virgule (;) C'est le cas de nombreux langages de programmation. Mais attention le langage JavaScript n'est pas aussi strict au niveau de sa syntaxe et certaines instructions autorisent l'absence de ; de fin.</p>
+        <p>Pour faire simple, cela ne coute rien d'ajouter systématiquement ce marqueur de fin d'instruction et sera donc la règle pour nous.</p>
+        <a href="#sommaire" class="retour-sommaire">↑ Retour au sommaire</a>
+
+        <h3 id="declarations_variables">LES DECLARATION DE VARIABLES</h3>
+        <p>Rappel du cours d'algorithmique :</p>
+        <p>En résumé :   variable = NOM + TYPE + VALEUR</p>
+        <p>JavaScript est dit "faiblement typé" contrairement à d'autres langage dit "fortement typé" comme par exemple le langage C. Avec ses langages il est nécessaire de préciser le type au moment de la déclaration d'une variable.</p>
+        <p>Exemple de déclaration de variable en C :</p>
+        <pre><code>int a=3;     //a est un entier et restera un entier pendant tous le programme 
+float b=3.5; //b est un réel et restera un réel pendant tous le programme
+char c='a';  //c est un caractère et restera un caractère pendant tous le programme</code></pre>
+        <p>Avec JavaScript une variable est déclaré avec la commande var ou let, mais sans indiquer son type. Le type sera fixé à l'utilisation. La notion de type est bien existante mais jamais indiqué de façon explicite dans le code.</p>
+        <p>Le JavaScript a 8 types : Number, String, Boolean, Null et Undefined, BigInt, Object, et Symbole (nouveau) .</p>
+        <p>Pour plus de précision sur le sujet voire le lien suivant :<br>
+        https://developer.mozilla.org/fr/docs/Web/JavaScript/Structures_de_donn%C3%A9es</p>
+        <p>Cela donne en Javascript :</p>
+        <pre><code>var a=3;        // a est un Number
+a="coucou";     // a est maintenant un String</code></pre>
+        <p>Dans ce programme la variable a est déclaré comme étant un "Number". Mais au cours du programme elle devient un "String". Bien que cela soit possible on essaiera au maximum ce genre de mélange.</p>
+        <a href="#sommaire" class="retour-sommaire">↑ Retour au sommaire</a>
+
+        <h3 id="memoire">MEMOIRE VIVE</h3>
+        <p>Sur un PC la mémoire vive est une mémoire de travail. Elle stock de façon temporaire des données et des programmes. Lorsque le PC est éteint le contenu de cette mémoire est supprimé. On parle alors de mémoire volatile, contrairement au disque dur d'un ordinateur qui stocke lui aussi des données mais de façon permanente. Cette mémoire est très rapide, et communique directement avec le processeur.</p>
+        <p>En JavaScript la mémoire est allouée lors de la création des objets puis libérée « automatiquement » lorsque ceux-ci ne sont plus utilisés. Cette libération automatique est appelée garbage collection en anglais ou ramasse-miettes.</p>
+        <a href="#sommaire" class="retour-sommaire">↑ Retour au sommaire</a>
+
+        <h3 id="choix_nom">CHOIX DU NOM</h3>
+        <p>Bien qu'il soit possible de donner des noms de variables avec des caractères accentués en JavaScript on se limitera au caractères suivants :<br>
+        • a..z, A..Z<br>
+        • 0..9                         interdit au début du nom<br>
+        • _ (le caractère souligné ou underscore)         autorisé au début du nom</p>
+        <p>On ne peut pas utiliser <br>
+        • Un tiret - ou un point . <br>
+        • Utiliser un mot clef du langage comme nom de variable. Exemple de mot clef (new, if, typeof,…)</p>
+        <p>On utilise l'alternance de minuscule, majuscule, ou _ (underscore) pour améliorer la lecture du nom. <br>
+        Rappel : pour la relecture du programme, choisir un nom qui caractérise au mieux la variable.<br>
+        Exemples:  nbrDeCaisses, poste_1, poste_123, etc… <br>
+        Le langage JavaScript est sensible à la casse. Ainsi une variable "Poste_1" n'est pas la même chose que "poste_1"</p>
+        <a href="#sommaire" class="retour-sommaire">↑ Retour au sommaire</a>
+
+        <h3 id="variables_constantes">DECLARATION DE VARIABLES ET CONSTANTES</h3>
+        <p>Pour pouvoir être utilisable une variable doit d'abord être déclarés. En théorie seulement puisqu'encore une fois le JavaScript est un langage très souple, pour ne pas dire permissif. Il autorise de nombreuses choses que d'autres langages refuseraient.</p>
+        <p>On parle de déclaration de variable. 2 mots clefs sont utilisés pour cela : var et let<br>
+        Une variable peut être déclaré n'importe quel moment.<br>
+        • Avec var, quel que soit l'endroit de la déclaration (hormis une fonction) la variable est globale, c’est-à-dire accessible à tous point de la page Web, ou à tout point du fichier .JS. Même déclarée dans un bloc d'instruction la variable est global <br>
+        • Avec let la variable est locale, si déclaré dans un bloc d'instruction entre { }. Locale dans le sens qu'elle n'est accessible ou utilisable uniquement dans ce bloc. Si déclaré en dehors d'un bloc d'instruction la variable est globale.</p>
+        <p>Que choisir entre var et let ? Pour faire simple nous utiliserons let. C'est ce qui est recommandé. Pour aller plus loin : <br>
+        https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Instructions/let</p>
+        <p>Rappel : le nom d'une variable est unique dans votre programme.<br>
+        Enfin il existe un dernier mot clef : const. Comme son nom l'indique il permet de déclarer une constante. Ici la constante doit être initialisé au moment de sa création. Son comportement (global ou local) est le même que pour let<br>
+        La syntaxe de base est :<br>
+        let a ;</p>
+        <p>Exemple :</p>
+        <pre><code>&lt;script&gt;
+   let a;   // a est ici undefined
+   let b=4; // b est un number vaut 4
+   let c,d=3,e;     //3 variables 
+   
+   const f=3;   //f est une constante
+   
+   var g="Bonjour"; //f est une String
+&lt;/script&gt;</code></pre>
+        <a href="#sommaire" class="retour-sommaire">↑ Retour au sommaire</a>
+
+        <h2 id="types_plages">LES DIFFERENTS TYPE ET LEUR PLAGE DE LA VALEUR</h2>
+        <p>Tableau récapitulatif :</p>
+        <pre><code>Type JavaScript	Type Algo	Taille	Plage de valeurs
+Number	Entier ou Réel	8 octets	-(2^53 -1) et 2^53 -1                                         pour les Entiers
+5e-324  et 1.7976931348623157e+308           pour les Réels
+BigInt	Entier	 ? 	 Permet d'aller au-delà de la limitation de Number.
+String	Chaine et Cacractère	 2 octets  à ?	Permet de représenter une chaine de caractère "Bonjour" ou un simple caractère 'c' 
+Boolean	Booléen	1	2 valeurs possibles  : true ou false.
+Null	?	?	Une valeur possible : null
+undefined	?	?	Une valeur possible : undefined</code></pre>
+        <a href="#sommaire" class="retour-sommaire">↑ Retour au sommaire</a>
+
+        <h3 id="details_types">DETAILS SUR LES DIFFERENTS TYPES</h3>
+        <p>• Number : représente soit un entier, ou bien un réel (nombre à virgule). Ce type de données peuvent recevoir des valeurs négatives. Dans ce cas-là on précède la valeur d'un (-). Pour une valeur positive il est possible, mais inutile, d'ajouter le signe (+) devant la valeur.  <br>
+        Exemple : </p>
+        <pre><code>let a=+10; //Les 2 déclarations sont équivalentes
+let a=10;</code></pre>
+        <p>Si Number est un entier sa plage de valeur est comprise entre -(2^53 -1) et 2^53 -1, soit entre -9007199254740991 et +9007199254740991. Passé cette plage JavaScript ne garantit plus la cohérence des calculs, et il y aura des incohérences. Pour comprendre ce phénomène il est important de comprendre la différence entre la représentation des nombres en mathématique et en informatique. <br>
+        Principe de la représentation des entiers en mathématique : <br>
+        En mathématique existe la notion abstraite de +∞ et -∞. Ainsi tous les nombres peuvent se représenter selon le graphique :</p>
+        <p>Principe de la représentation des entiers en informatique :<br>
+        Les machines informatiques ont des limites et ne permettent pas de représenter les nombres entiers de +∞ à -∞. Il y a une limite. Par exemple sur un 1 octet le nombre de valeurs possible est de 2^8 soit de [-127 .. 0 .. 128] soit 256 valeurs.  La valeur -128 ne peut pas être représenté, et de même pour la valeur 129. <br>
+        La représentation est donc celle d'un cercle.<br>
+        Ainsi le calcul suivant donne un résultat faux :</p>
+        <pre><code>let a=2**53-1;  //ici a vaut 9007199254740991
+a=a+20;         // en théorie a vaut maintenant 9 007 199 254 741 011
+                // en réalité cela donne 9007199254741012</code></pre>
+        <p>Avec une erreur de 1 répété beaucoup de fois on peut arriver à de grosses erreurs.</p>
+        <p>Si Number est un réel sa plage de valeurs est comprise entre 5e-324  et 1.7976931348623157e+308. Passé cette plage JavaScript propose 2 valeurs pour représenter +∞ à -∞. </p>
+        <pre><code>let a=(2**2000);
+let b=-(2**2000);</code></pre>
+        <p>Ici (a) vaut Infinity. Et (b) –Infinity</p>
+        <p>• Le BigInt : ce type permet de représenter des entiers quand la plage des entiers sur Number est dépassée. Il faut pour cela préfixé chaque valeur d'un petit n. </p>
+        <pre><code>let a=2n**53n-1n;  //ici a vaut 9007199254740991
+a=a+20n;           // a vaut  9 007 199 254 741 011</code></pre>
+        <p>• Le String: permet la représentation de chaine de caractères mais aussi de simple caractère. Le langage JavaScript autorise indifféremment l'usage des doubles cotes (") ou simple cote (').</p>
+        <pre><code>let a="coucou";
+let b='coucou';</code></pre>
+        <p>Chaque caractère formant la chaine (a) ou (b) est constitué de caractère codé sur 16 bits soit 2 octets. JavaScript utilise la table Unicode. Donc un caractère a une valeur numérique. <br>
+        Voici une liste de certains caractères spéciaux :</p>
+        <pre><code>Code	Sortie
+\'	apostrophe
+\"	guillemets
+\&	&
+\\	barre oblique inverse
+\n	nouvelle ligne
+\r	retour de chariot
+\t	tabulation
+\b	espace
+\f	saut de page</code></pre>
+        <a href="#sommaire" class="retour-sommaire">↑ Retour au sommaire</a>
+
+        <h2 id="operateurs">LES OPÉRATEURS</h2>
+        <p>Il y a 3 grandes catégories d'opérateurs.</p>
+        <a href="#sommaire" class="retour-sommaire">↑ Retour au sommaire</a>
+
+        <h3 id="op_arithmetiques">LES OPÉRATEURS ARITHMÉTIQUES</h3>
+        <p>Il existe une certaine priorité des opérateurs, comme en mathématique. Pour s'éviter tous problèmes avec ces priorités il suffit de mettre des parenthèses.</p>
+        <pre><code>Opérateur	Signification
++	Addition
+-	Soustraction
+*	Multiplication
+/	Division
+%	Modulo (reste de la division entière)
+**	puissance</code></pre>
+        <p>Le langage JavaScript a la particularité de toujours chercher à retourner quelque chose même quand le calcul n'a pas de logique. Il faut donc faire très attention !!<br>
+        Quelques exemples :</p>
+        <pre><code>let a=3,b=5,c=a+b;          //  c vaut 8 normal
+let a=3,b=50.5,c=a+b;       //  c vaut 53.5
+let a=true,b=50.5,c=a+b;    //  c vaut ?
+let a=true,b=true,c=a+b;    //  c vaut ?
+let a=5,b="test",c=a+b;     //  c vaut ?</code></pre>
+        <p>Quand une opération n'est vraiment pas possible JavaScript retourne en générale une valeur NaN qui signifie Not A Number.<br>
+        Dans l'exemple qui suit on cherche à diviser un Number par un String ce qui n'a pas de sens. Le résultat est ici NaN</p>
+        <pre><code>let a=5,b="test",c=a/b;</code></pre>
+        <p>Cas particulier de la division d'entier :<br>
+        Dans de nombreux cas nous avons besoin de récupérer un résultat de type Entier. Le code suivant ne permet d'obtenir le quotient 2 pour cette opération, mais 2.5. Plusieurs solutions existent pour obtenir le résultat voulu notamment la fonction pareInt.</p>
+        <pre><code>let a=5,b=2,c=a/b;            // sans parseInt c vaut 2.5    
+document.write(parseInt(c));  // avec parseInt c vaut 2</code></pre>
+        <p>Pour obtenir le reste de la division on utilisera l'opérateur %.  Avec JavaScript % marche aussi sur les nombres reels. Encore une souplesse qui n'existe pas d'autre langage. A éviter !! </p>
+        <pre><code>let a=5,b=2,c=a%b;            // c vaut 1</code></pre>
+        <p>Comme vous l'avez appris en math il ne faut jamais diviser par 0. Dans de nombreux langage ce genre d'opérations fait planter le programme par le mécanisme d'exception comme en Java par exemple. Et bien ce n'est pas le cas en JavaScript. Il existe même en JavaScript la valeur -0. Comme nous l'avons déjà dit, JavaScript cherchera toujours à retourner un résultat.</p>
+        <pre><code>let a=5.5,b=0,c=a/b;          // une division par zéro : ici c vaut infinity    
+let a=5.5,b=-0,c=a/b;         // une division par - zéro : ici c vaut  -infinity</code></pre>
+        <p>Les principes énoncés ci-dessus sont les même pour les autres opérateurs.<br>
+        Attention pour l'opérateur ** (puissance). JavaScript possède également un opérateur binaire ^ (XOR logique). ** et ^ sont deux opérateurs bien différents. Par exemple 2 ** 3 === 8 et 2 ^ 3 === 1.</p>
+        <a href="#sommaire" class="retour-sommaire">↑ Retour au sommaire</a>
+
+        <h3 id="op_logiques">LES OPÉRATEURS LOGIQUES</h3>
+        <p>Ce type d'opérateur dans les tests des conditions (if, else if) ou des boucles (for, while, do while). Le résultat d'une opération logique est une valeur booléenne (true ou false)</p>
+        <pre><code>Opérateur	Signification
+!	Non logique
+&&	Et logique
+||	Ou logique
+== (double égal)	Égal à
+!=	Différent de
+&lt;	Inférieur à
+&gt;	Supérieur à
+&lt;=	Inférieur ou égal à
+&gt;=	Supérieur ou égal à</code></pre>
+        <p>Exemple :</p>
+        <pre><code>let i=4,j=3 ;
+let v ;
+v=(i&lt;=j) ;              // v vaut : false
+v=(i==4 && i &gt; 2);      // v vaut ?</code></pre>
+        <a href="#sommaire" class="retour-sommaire">↑ Retour au sommaire</a>
+
+        <h3 id="op_affectation">LES OPÉRATEURS D'AFFECTATION ET D'INCRÉMENTATION</h3>
+        <pre><code>Opérateur	Signification
+=	Affectation
++=	Ajout de l’opérande de droite
+-=	Suppression de l’opérande de droite
+*=	Multiplication de l’opérande de droite
+/=	Division de l’opérande de droite
+%=	Modulo de l’opérande de droite
+**=	Puissance de l'opérande de droite
+? :	Affectation conditionnelle
+++variable	Pré-incrémentation (avant)
+variable++	Post-incrémentation (après)
+--variable	Pré-décrémentation
+variable--	Post-décrémentation</code></pre>
+        <p>Quelques exemples simples :</p>
+        <pre><code>let i=3;
+i++ ;   // i=i+1 ;
+i-- ;   // i=i-1 ; 
+i+=1 ;  //i=i+1 ;
+i*=5 ;  //i=i*5 ;</code></pre>
+        <p>Attention, certains opérateurs sont dits à effet de bord, et s'ils sont mal utilisé (ou mal maitrisé) peuvent donner des résultats inattendus. Exemple</p>
+        <pre><code>let a=5,b=1,c=0;
+c=++b + a++;   //c vaut ?
+
+let a=5,b=1,c=0;
+c=b++ + a++;   //c vaut ?</code></pre>
+        <p>Conseils : Programmez au début en utilisant une façon simple d’incrémenter et d’affecter.</p>
+        <p>L’affectation conditionnelle : <br>
+        Syntaxe : &lt;opérande&gt; = &lt;condition&gt; ?&lt;expression1&gt; :&lt;expression2&gt; ;<br>
+        Si condition vaut true alors on affecte à opérande expression1, si false expresson2.<br>
+        Exemple :  <br>
+        let i=3,j=4,k ;<br>
+        k= i&gt;j ?10 :-10 ;</p>
+        <a href="#sommaire" class="retour-sommaire">↑ Retour au sommaire</a>
+
+        <h2 id="entree_sortie">LES FONCTIONS D'ENTRÉE/SORTIE</h2>
+        <p>Les fonctions d'entrée-sortie permettent de "dialoguer" avec un périphérique d'entrée (bien souvent un clavier) et un périphérique de sortie (bien souvent un écran). <br>
+        Dans un environnement Web, pour commencer simplement nous utiliserons 3 fonctions :<br>
+        • Alert ou plutôt window.alert(message);<br>
+        • resultat = window.confirm(message);<br>
+                message est la chaîne contenant le texte à afficher dans le dialogue.<br>
+                resultat est une valeur booléenne indiquant si OK ou Annuler a été sélectionné (true signifie OK).<br>
+        • resultat = window.prompt(message, defaut);<br>
+        message Une chaîne de caractères qui sera affichée pour l'utilisateur<br>
+        defaut : Une chaîne de caractères contenant la valeur par défaut affichée pour la saisie<br>
+        résultat : La chaîne de caractères qui a été saisie par l'utilisateur ou null</p>
+        <a href="#sommaire" class="retour-sommaire">↑ Retour au sommaire</a>
+    </div>
+
+    <div class="footer-row">
+        <a href="coursJS.pdf" download>Télécharger le cours</a>
+        <a href="#sommaire">Sommaire</a>
+    </div>
+
+</body>
+</html>

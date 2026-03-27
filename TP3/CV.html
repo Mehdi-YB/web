@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Mehdi Yahia-Benattia</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #2c2c2c;
+            line-height: 1.5;
+            padding: 30px 15px;
+        }
+
+        .cv-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .cv-header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 30px;
+        }
+
+        .cv-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+
+        .cv-header .infos {
+            border-top: 1px solid rgba(255, 255, 255, 0.35);
+            padding-top: 15px;
+            font-size: 0.95rem;
+        }
+
+        .cv-main {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+        }
+
+        .col-gauche {
+            background-color: #f7f7f7;
+            padding: 30px;
+        }
+
+        .col-droite {
+            background-color: #fcfcfc;
+            padding: 30px;
+        }
+
+        section {
+            margin-bottom: 35px;
+        }
+
+        h2 {
+            color: #34495e;
+            font-size: 1.5rem;
+            margin-bottom: 18px;
+        }
+
+        h3 {
+            font-size: 1.05rem;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-top: 8px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        .separation {
+            border-top: 2px solid #d6d6d6;
+            margin: 25px 0 30px 0;
+        }
+
+        .retour {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .retour a {
+            display: inline-block;
+            background-color: #3ea0e8;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .retour a:hover {
+            background-color: #2980b9;
+        }
+
+        @media (max-width: 800px) {
+            .cv-main {
+                grid-template-columns: 1fr;
+            }
+
+            .cv-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cv-container">
+
+        <header class="cv-header">
+            <h1>Mehdi Yahia-Benattia</h1>
+            <div class="infos">
+                <p>21 Allée des Grisards, 26500 Bourg-Lès-Valence | 07 84 96 84 16</p>
+                <p>mehdiyahiabenattia@gmail.com</p>
+            </div>
+        </header>
+
+        <main class="cv-main">
+
+            <div class="col-gauche">
+
+                <section>
+                    <h2>Expérience Professionnelle</h2>
+
+                    <article>
+                        <h3>Employé polyvalent – Burger King</h3>
+                        <p>juillet 2024 à aujourd’hui</p>
+                        <p>Accueil des clients, prise de commandes et participation aux tâches en cuisine.</p>
+                        <ul>
+                            <li>Encaissement et gestion des commandes</li>
+                            <li>Respect des règles d’hygiène et de sécurité (HACCP)</li>
+                            <li>Entretien, nettoyage et réassort pendant le service</li>
+                        </ul>
+                    </article>
+
+                    <br>
+
+                    <article>
+                        <h3>Stage scolaire — 2024-2025</h3>
+                        <p>Accompagnement et assistance au changement de l’infrastructure réseau d’une PME.</p>
+                        <p>Participation aux projets d’évolution du réseau et des serveurs.</p>
+                        <ul>
+                            <li>Mise en place de serveurs</li>
+                            <li>Création de schémas réseau</li>
+                            <li>Aide à la configuration et aux tests</li>
+                            <li>Suivi et support technique de base</li>
+                        </ul>
+                    </article>
+                </section>
+
+                <div class="separation"></div>
+
+                <section>
+                    <h2>Formation Scolaire</h2>
+
+                    <article>
+                        <h3>Lycée Polyvalent Algoud Laffemas</h3>
+                        <p>2025-2026</p>
+                        <p>BTS services informatiques aux organisations</p>
+                    </article>
+
+                    <br>
+
+                    <article>
+                        <h3>Lycée Polyvalent Algoud Laffemas</h3>
+                        <p>2018-2019</p>
+                        <p>BAC sciences et technologies de l’industrie et du développement durable</p>
+                    </article>
+                </section>
+
+            </div>
+
+            <div class="col-droite">
+
+                <section>
+                    <h2>Compétences Transversales</h2>
+                    <ul>
+                        <li>Patience</li>
+                        <li>Travail d’équipe</li>
+                        <li>Gestion du temps et des priorités</li>
+                    </ul>
+                </section>
+
+                <div class="separation"></div>
+
+                <section>
+                    <h2>Compétences Techniques</h2>
+                    <ul>
+                        <li>Mise en place d’infrastructure réseau</li>
+                        <li>Mise en place de serveurs divers</li>
+                        <li>Utilisation de Windows Server</li>
+                        <li>Utilisation de Rocky Linux</li>
+                        <li>Bonne pratique en cybersécurité</li>
+                        <li>Réponse à un appel d’offre de matériel informatique</li>
+                    </ul>
+                </section>
+
+                <div class="separation"></div>
+
+                <section>
+                    <h2>Certifications</h2>
+                    <ul>
+                        <li>PIX 563</li>
+                    </ul>
+                </section>
+
+                <div class="separation"></div>
+
+                <section>
+                    <h2>Langues</h2>
+                    <ul>
+                        <li>Français : maternelle</li>
+                        <li>Anglais : courant</li>
+                    </ul>
+                </section>
+
+                <div class="separation"></div>
+
+                <section>
+                    <h2>Centres d’Intérêts</h2>
+                    <ul>
+                        <li>Lecture</li>
+                        <li>Musculation</li>
+                        <li>Jeux vidéo</li>
+                        <li>Cuisine</li>
+                    </ul>
+                </section>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <div class="retour">
+        <a href="TP3.html">Retour TP3</a>
+    </div>
+
+</body>
+</html>

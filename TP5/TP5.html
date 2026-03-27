@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu TP 5 - Les Tableaux</title>
+    <link rel="stylesheet" href="Style.css">
+    
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px 15px 30px 15px;
+            background-color: #dfe4ea;
+            color: #2c3e50;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        .titre-joli {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding: 0;
+            background: none;
+        }
+
+        .intro {
+            text-align: center;
+            color: #5f6b77;
+            margin-bottom: 25px;
+            line-height: 1.5;
+            background-color: #f1f1f1;
+            border-radius: 18px;
+            padding: 20px 25px;
+        }
+
+        .menu-boutons {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 16px;
+        }
+
+        .menu-boutons tr td {
+            background-color: #f1f1f1;
+            border-radius: 18px;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .menu-boutons a {
+            display: block;
+            padding: 20px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #3399ff;
+            font-size: 1.05em;
+        }
+
+        .menu-boutons a:hover {
+            background-color: #e8ecef;
+        }
+
+        .bonus td {
+            background-color: #eef5d8;
+        }
+
+        /* bouton retour */
+        .retour td {
+            background: none !important;
+            padding: 10px 0;
+            text-align: center;
+            border-radius: 0;
+        }
+
+        .retour a {
+            display: inline-block;
+            background-color: #3ea0e8;
+            color: white;
+            padding: 12px 32px;
+            border-radius: 999px;
+            margin-top: 4px;
+            text-decoration: none;
+        }
+
+        .retour a:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <h1 class="titre-joli">TP 5 : Les Tableaux HTML</h1>
+        
+        <p class="intro">
+            Bienvenue dans l'espace dédié à l'utilisation des balises Tableaux, Images et Liens. Sélectionnez l'exercice que vous souhaitez consulter :
+        </p>
+        
+        <table class="menu-boutons">
+            <tr>
+                <td><a href="exercice/exercice1.html">Exercice 1 : Calendrier Scolaire</a></td>
+            </tr>
+            <tr>
+                <td><a href="exercice/exercice2.html">Exercice 2 : Langages Serveur</a></td>
+            </tr>
+            <tr>
+                <td><a href="exercice/exercice3.html">Exercice 3 : Calendrier Mensuel</a></td>
+            </tr>
+            <tr class="retour">
+                <td><a href="../index.html">Retour a l'Accueil</a></td>
+            </tr>
+        </table>
+        
+    </div> 
+
+</body>
+</html>

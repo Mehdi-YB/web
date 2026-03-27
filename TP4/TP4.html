@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - Programmation Web</title>
+
+    <link rel="stylesheet" href="Style/stylesTP4.css">
+
+    <style>
+        /* bouton retour */
+        .retour {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .retour a {
+            display: inline-block;
+            background-color: #3ea0e8;
+            color: white;
+            padding: 12px 32px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .retour a:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="page">
+
+        <header class="header">
+            <h1>TP4 : Programmation Web</h1>
+            <p>Accède rapidement aux cours HTML, CSS et JavaScript</p>
+        </header>
+
+        <section class="cards">
+            <a href="Docs/cours_html/COURS/cours1.html" class="card html">
+                <img src="Image/html5-logo-31813.png" alt="HTML">
+                <span>HTML</span>
+            </a>
+
+            <a href="Docs/cours_css/COURS/cours1.html" class="card css">
+                <img src="Image/css-logo-01.png" alt="CSS">
+                <span>CSS</span>
+            </a>
+
+            <a href="Docs/cours_JS/indexJS.html" class="card js">
+                <img src="Image/javascript-logo.png" alt="JavaScript">
+                <span>JavaScript</span>
+            </a>
+        </section>
+
+        <section class="content">
+            <div class="box">
+                <h2>Description</h2>
+                <p>
+                    Cette page regroupe tous les supports du bloc 1.
+                    Tu peux accéder aux cours et aux travaux pratiques
+                    pour progresser en développement web.
+                </p>
+            </div>
+
+            <div class="box">
+                <h2>Accès aux cours</h2>
+                <ul>
+                    <li><a href="Docs/cours_html/COURS/cours1.html">HTML</a></li>
+                    <li><a href="Docs/cours_css/COURS/cours1.html">CSS</a></li>
+                    <li><a href="Docs/cours_JS/indexJS.html">JavaScript</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- bouton retour -->
+        <div class="retour">
+            <a href="../index.html">Retour a l'Accueil</a>
+        </div>
+
+    </main>
+
+</body>
+</html>

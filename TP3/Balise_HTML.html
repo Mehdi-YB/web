@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mémo HTML</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #2c3e50;
+            line-height: 1.5;
+            padding: 30px 15px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            margin-bottom: 15px;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: #2980b9;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 5px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: white;
+            border-radius: 10px;
+        }
+
+        h2 {
+            margin-bottom: 12px;
+            color: #2980b9;
+        }
+
+        h3 {
+            margin: 8px 0;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        ul, ol {
+            margin: 10px 0 10px 20px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #bbb;
+            padding: 10px;
+            text-align: left;
+        }
+
+        form {
+            margin-top: 10px;
+        }
+
+        input, textarea, select, button {
+            margin-top: 8px;
+            margin-bottom: 10px;
+            padding: 8px;
+            font-family: Arial, sans-serif;
+        }
+
+        img, video, audio {
+            margin-top: 10px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #555;
+        }
+
+        .retour {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .retour a {
+            display: inline-block;
+            background-color: #3ea0e8;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .retour a:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>Mémo HTML</h1>
+        </header>
+
+        <main>
+            <section id="texte">
+                <h2>Titres</h2>
+                <h1>h1</h1>
+                <h2>h2</h2>
+                <h3>h3</h3>
+
+                <h2>Paragraphes</h2>
+                <p>Paragraphe normal <strong>texte important</strong> et <em>texte accentué</em>.</p>
+                <p>Texte avec<br>saut de ligne</p>
+                <hr>
+            </section>
+
+            <section id="liens">
+                <h2>Liens</h2>
+                <a href="https://example.com">Lien externe</a>
+
+                <h2>Images</h2>
+                <img src="placeholder.jpg" alt="Exemple d'image" width="100">
+            </section>
+
+            <section id="listes">
+                <h2>Liste non ordonnée</h2>
+                <ul>
+                    <li>Élément 1</li>
+                    <li>Élément 2</li>
+                </ul>
+
+                <h2>Liste ordonnée</h2>
+                <ol>
+                    <li>Premier</li>
+                    <li>Deuxième</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Tableau</h2>
+                <table>
+                    <tr>
+                        <th>En-tête</th>
+                        <th>En-tête</th>
+                    </tr>
+                    <tr>
+                        <td>Donnée</td>
+                        <td>Donnée</td>
+                    </tr>
+                </table>
+            </section>
+
+            <section>
+                <h2>Formulaire</h2>
+                <form>
+                    <label>Nom : <input type="text" placeholder="Entrez votre nom"></label><br>
+                    <textarea rows="3">Message...</textarea><br>
+                    <select>
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                    </select><br>
+                    <button type="submit">Envoyer</button>
+                </form>
+            </section>
+
+            <section>
+    <h2>Médias</h2>
+    
+    <p>Fichier audio (MP3)</p>
+    <audio controls>
+        <source src="../TP3/medias/See You Again.mp3" type="audio/mpeg">
+    </audio><br>
+
+    <p>Fichier vidéo (MP4)</p>
+    <video controls width="200">
+        <source src="../TP3/medias/video.mp4" type="video/mp4">
+    </video>
+</section>
+        <div class="retour">
+            <a href="TP3.html">Retour TP3</a>
+        </div>
+
+    </div>
+
+    <script>
+        console.log("Page chargée !");
+    </script>
+
+</body>
+</html>

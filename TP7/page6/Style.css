@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+    font-family: serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.haut {
+    background-color: #800080;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.menu {
+    background-color: #0000ff;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.conteneur-grille {
+    background-color: #ffc0cb;
+    padding: 10px;
+    flex: 1;
+    display: flex;
+}
+
+.grille {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    flex: 1;
+    background-color: white;
+    border: 2px solid white;
+}
+
+.pz {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 20px;
+    min-height: 80px;
+}
+
+.rouge {
+    background-color: #e60000;
+}
+
+.orange {
+    background-color: #fca000;
+}
+
+.vert {
+    background-color: #008000;
+}
+
+.marron {
+    background-color: #a52a2a;
+}
+
+.bas {
+    background-color: #c0c0c0;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .grille {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .grille {
+        grid-template-columns: 1fr;
+    }
+}
+
+.menu-boutons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+.bouton-lien {
+    display: inline-block;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 8px;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.retour-portfolio {
+    background-color: #2e8ece;
+}
+
+.retour-portfolio:hover {
+    background-color: #2572a5;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    color: white;
+}
+
+.menu-boutons {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.bouton-lien {
+    background-color: #3ea0e8;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 999px;
+    text-decoration: none;
+}
+
+.bouton-lien:hover {
+    background-color: #2980b9;
+}

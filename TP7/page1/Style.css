@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #ff5454;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+}
+
+aside {
+    background-color: #5584ff;
+    width: 250px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+main {
+    background-color: #5bd97e;
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    aside {
+        width: 100%;
+    }
+}
+
+.menu-boutons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+.bouton-lien {
+    display: inline-block;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 8px;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.menu-boutons {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.bouton-lien {
+    background-color: #3ea0e8;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 999px;
+    text-decoration: none;
+}
+
+.bouton-lien:hover {
+    background-color: #2980b9;
+}

@@ -1,0 +1,121 @@
+body {
+    margin: 0;
+    font-family: serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    border: 1px solid #000;
+    box-sizing: border-box;
+}
+
+.haut {
+    background-color: #43a39b;
+    padding: 15px;
+    border-bottom: 1px solid #000;
+}
+
+.menu {
+    background-color: #98459e;
+    padding: 10px 15px;
+    border-bottom: 1px solid #000;
+}
+
+.conteneur-grille {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+}
+
+.grille {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    flex: 1;
+}
+
+.zone-a {
+    background-color: #39a099;
+    padding: 10px;
+}
+
+.zone-b {
+    background-color: #df9e1c;
+    padding: 10px;
+}
+
+.zone-c {
+    background-color: #b7b5d5;
+    padding: 10px;
+}
+
+.zone-d {
+    background-color: #0b1ef5;
+    padding: 10px;
+}
+
+.bas {
+    background-color: #43a39b;
+    padding: 15px;
+    border-top: 1px solid #000;
+}
+
+@media (max-width: 768px) {
+    .conteneur-grille {
+        padding: 10px;
+    }
+
+    .grille {
+        grid-template-columns: 1fr;
+    }
+}
+
+.menu-boutons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+.bouton-lien {
+    display: inline-block;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 8px;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.retour-portfolio {
+    background-color: #2e8ece;
+}
+
+.retour-portfolio:hover {
+    background-color: #2572a5;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    color: white;
+}
+
+.menu-boutons {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.bouton-lien {
+    background-color: #3ea0e8;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 999px;
+    text-decoration: none;
+}
+
+.bouton-lien:hover {
+    background-color: #2980b9;
+}

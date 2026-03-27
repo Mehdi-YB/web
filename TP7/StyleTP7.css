@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #dfe4ea;
+    color: #2c3e50;
+}
+
+/* CONTENEUR */
+.page {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 0 30px 0;
+}
+
+/* TITRE */
+.titre-principal {
+    text-align: center;
+    font-size: 2.3rem;
+    margin-bottom: 20px;
+}
+
+/* INTRO */
+.intro {
+    width: 70%;
+    margin: 0 auto 15px auto;
+    text-align: center;
+    background-color: #f1f1f1;
+    border-radius: 18px;
+    padding: 15px;
+    color: #5f6b77;
+}
+
+/* LISTE PAGES */
+.projets-container {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* BOUTONS PAGES */
+.carte-tp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f1f1;
+    border-radius: 18px;
+    height: 60px;
+    text-decoration: none;
+}
+
+.carte-tp h2 {
+    margin: 0;
+    color: #3399ff;
+    font-size: 1.05rem;
+}
+
+.carte-tp:hover {
+    background-color: #e8ecef;
+}
+
+/* BOUTON RETOUR */
+.retour {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.retour a {
+    display: inline-block;
+    background-color: #3ea0e8;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.retour a:hover {
+    background-color: #2980b9;
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Langage SQL</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 30px;
+            color: #2c3e50;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            margin-top: 25px;
+            color: #2980b9;
+        }
+
+        h3 {
+            margin-top: 15px;
+        }
+
+        p {
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+
+        ul {
+            margin: 10px 0 10px 20px;
+        }
+
+        blockquote {
+            background-color: #f1f1f1;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        /* bouton retour */
+        .retour {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .retour a {
+            display: inline-block;
+            background-color: #3ea0e8;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .retour a:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Le Langage SQL</h1>
+        
+        <h2>Définition</h2>
+        <p>SQL est un langage permettant de manipuler des bases de données relationnelles.</p>
+        
+        <h2>Normes SQL</h2>
+        <ul>
+            <li>SQL-89</li>
+            <li>SQL-92</li>
+            <li>SQL-2011</li>
+        </ul>
+        
+        <p>Bien qu'il existe des normes, il peut y avoir des différences entre SGBDR dans la syntaxe.</p>
+        
+        <blockquote>
+            <p>"Le développement de PostgreSQL respecte le standard en vigueur..."</p>
+            <p>"SQL-92 définit trois niveaux de conformité : ENTRY, INTERMEDIATE et FULL."</p>
+        </blockquote>
+        
+        <h2>Le modèle de données utilisé dans le cours</h2>
+        
+        <h3>2.1. Modèle entité-association</h3>
+        <p>Contenu à ajouter...</p>
+        
+        <h3>2.2. Modèle relationnel</h3>
+        <p>Contenu à ajouter...</p>
+        
+        <h3>2.3. Description des tables</h3>
+        <p><strong>fonction_personnel</strong> (code_fonction, libelle_fonction)</p>
+        <p>Clé primaire : code_fonction</p>
+        
+        <p><strong>service</strong> (num_service, libelle_service, capacite_accueil, date_ouverture)</p>
+        <p>Clé primaire : num_service</p>
+
+        <!-- bouton retour -->
+        <div class="retour">
+            <a href="TP3.html">Retour TP3</a>
+        </div>
+
+    </div>
+
+</body>
+</html>
