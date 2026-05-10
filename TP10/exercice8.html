@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-
     <meta charset="UTF-8">
-
     <title>Devis béton</title>
-
     <link rel="stylesheet" href="style.css">
 
+    <!-- Bonus pour télécharger en PDF -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-
 </head>
 
 <body>
@@ -25,293 +21,88 @@
         <label>Épaisseur de la dalle en cm :</label>
         <input type="number" id="epaisseur">
 
-        <button onclick="calculerDevis()">
-            Obtenir le devis
-        </button>
+        <button onclick="calculerDevis()">Obtenir le devis</button>
 
         <p id="message" class="erreur"></p>
 
         <div id="devis">
 
             <div class="devis-header">
-
                 <h2>DEVIS</h2>
-
-                <p class="numero-devis">
-                    N°12345
-                </p>
-
+                <p id="numeroDevis"></p>
             </div>
 
             <div class="devis-info">
-
                 <div>
-
                     <h3>LAFARGE</h3>
-
                     <p>123-456-7890</p>
-
                     <p>contact@lafarge.fr</p>
-
                     <p>France</p>
-
                 </div>
 
                 <div class="client">
-
                     <h3>À L'ATTENTION DE</h3>
-
                     <p>Client</p>
-
-                    <p>
-                        Date :
-                        <span id="dateDevis"></span>
-                    </p>
-
+                    <p>Date : <span id="dateDevis"></span></p>
                     <p>Validité : 1 mois</p>
-
                 </div>
-
             </div>
 
             <table>
-
                 <tr>
-
                     <th>Description</th>
-
                     <th>Prix</th>
-
                     <th>Quantité</th>
-
                     <th>Total</th>
-
                 </tr>
 
                 <tr>
-
-                    <td>Béton livré</td>
-
-                    <td id="prixM3"></td>
-
-                    <td id="volumeFacture"></td>
-
-                    <td id="prixBeton"></td>
-
-                </tr>
-
-                <tr>
-
-                    <td>Transport</td>
-
-                    <td>140 €</td>
-
-                    <td id="camions"></td>
-
-                    <td id="transport"></td>
-
-                </tr>
-
-                <tr>
-
-                    <td>Ciment nécessaire</td>
-
-                    <td colspan="2" id="ciment"></td>
-
+                    <td>Volume réel de béton</td>
                     <td>-</td>
-
+                    <td id="volumeReel"></td>
+                    <td>-</td>
                 </tr>
 
+                <tr>
+                    <td>Béton livré</td>
+                    <td>91 € / m³</td>
+                    <td id="volumeFacture"></td>
+                    <td id="prixBeton"></td>
+                </tr>
+
+                <tr>
+                    <td>Transport</td>
+                    <td>140 €</td>
+                    <td id="camions"></td>
+                    <td id="transport"></td>
+                </tr>
+
+                <tr>
+                    <td>Ciment nécessaire</td>
+                    <td colspan="2" id="ciment"></td>
+                    <td>-</td>
+                </tr>
             </table>
 
             <div class="totaux">
-
-                <p>
-                    Sous-total HT :
-                    <span id="ht"></span>
-                </p>
-
-                <p>
-                    TVA 20% :
-                    <span id="tva"></span>
-                </p>
-
-                <p class="total-ttc">
-                    TOTAL TTC :
-                    <span id="ttc"></span>
-                </p>
-
+                <p>Sous-total HT : <span id="ht"></span></p>
+                <p>TVA 20% : <span id="tva"></span></p>
+                <p class="total-ttc">TOTAL TTC : <span id="ttc"></span></p>
             </div>
 
             <div class="conditions">
-
                 <h3>Termes et conditions</h3>
-
-                <p>
-                    Le devis est calculé selon la surface,
-                    l’épaisseur et le nombre de camions nécessaires.
-                </p>
-
-                <p>
-                    Livraison uniquement par camion de 9 m³.
-                </p>
-
+                <p>Le devis est calculé selon la surface, l’épaisseur et le nombre de camions nécessaires.</p>
+                <p>Livraison uniquement par camion de 9 m³.</p>
             </div>
 
         </div>
 
-        <button id="btnPdf" onclick="telechargerPDF()">
-            Télécharger le devis en PDF
-        </button>
+        <button id="btnPdf" onclick="telechargerPDF()">Télécharger le devis en PDF</button>
 
     </div>
 
-    <script>
-
-        function calculerDevis() {
-
-            let surface =
-                parseFloat(document.getElementById("surface").value);
-
-            let epaisseur =
-                parseFloat(document.getElementById("epaisseur").value);
-
-            let message =
-                document.getElementById("message");
-
-            if (
-                isNaN(surface)
-                ||
-                isNaN(epaisseur)
-                ||
-                surface <= 0
-                ||
-                epaisseur < 15
-                ||
-                epaisseur > 35
-            ) {
-
-                message.innerHTML =
-                    "Erreur : saisie invalide";
-
-                document.getElementById("devis").style.display =
-                    "none";
-
-                document.getElementById("btnPdf").style.display =
-                    "none";
-            }
-
-            else {
-
-                message.innerHTML = "";
-
-                let epaisseurMetre =
-                    epaisseur / 100;
-
-                let volume =
-                    surface * epaisseurMetre;
-
-                let nbCamions =
-                    Math.ceil(volume / 9);
-
-                let volumeFacture =
-                    nbCamions * 9;
-
-                let cimentKg =
-                    volume * 350;
-
-                let cimentTonnes =
-                    cimentKg / 1000;
-
-                let prixBetonHT =
-                    volumeFacture * 91;
-
-                let prixTransportHT =
-                    nbCamions * 140;
-
-                let totalHT =
-                    prixBetonHT + prixTransportHT;
-
-                let tva =
-                    totalHT * 0.20;
-
-                let totalTTC =
-                    totalHT + tva;
-
-                document.getElementById("dateDevis").innerHTML =
-                    new Date().toLocaleDateString();
-
-                document.getElementById("prixM3").innerHTML =
-                    "91 € / m³";
-
-                document.getElementById("volumeFacture").innerHTML =
-                    volumeFacture + " m³";
-
-                document.getElementById("prixBeton").innerHTML =
-                    prixBetonHT.toFixed(2) + " €";
-
-                document.getElementById("camions").innerHTML =
-                    nbCamions;
-
-                document.getElementById("transport").innerHTML =
-                    prixTransportHT.toFixed(2) + " €";
-
-                document.getElementById("ciment").innerHTML =
-                    cimentTonnes.toFixed(2) + " tonnes";
-
-                document.getElementById("ht").innerHTML =
-                    totalHT.toFixed(2) + " €";
-
-                document.getElementById("tva").innerHTML =
-                    tva.toFixed(2) + " €";
-
-                document.getElementById("ttc").innerHTML =
-                    totalTTC.toFixed(2) + " €";
-
-                document.getElementById("devis").style.display =
-                    "block";
-
-                document.getElementById("btnPdf").style.display =
-                    "block";
-            }
-        }
-
-        function telechargerPDF() {
-
-            let element =
-                document.getElementById("devis");
-
-            let options = {
-
-                margin: 0.3,
-
-                filename: "devis-beton.pdf",
-
-                image: {
-                    type: "jpeg",
-                    quality: 1
-                },
-
-                html2canvas: {
-                    scale: 2,
-                    scrollY: 0
-                },
-
-                jsPDF: {
-                    unit: "cm",
-                    format: "a4",
-                    orientation: "portrait"
-                }
-            };
-
-            html2pdf()
-                .set(options)
-                .from(element)
-                .save();
-        }
-
-    </script>
+    <script src="script.js"></script>
 
 </body>
-
 </html>
