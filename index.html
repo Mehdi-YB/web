@@ -2,81 +2,48 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Accueil - Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - Mes TP</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #dfe4ea;
-            display: flex;
-            justify-content: center;
-            padding: 40px 15px;
-        }
-
-        /* CONTENEUR */
-        .container {
-            width: 100%;
-            max-width: 500px;
-        }
-
-        /* TITRE */
-        .titre {
-            text-align: center;
-            font-size: 2.3rem;
-            color: #2c3e50;
-            margin-bottom: 25px;
-        }
-
-        /* MENU */
-        .menu {
-            width: 70%;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        /* BOUTONS */
-        .menu a {
-            display: block;
-            background-color: #f1f1f1;
-            padding: 20px;
-            border-radius: 18px;
-            text-decoration: none;
-            color: #3399ff;
-            font-weight: bold;
-            text-align: center;
-            transition: 0.2s;
-        }
-
-        /* HOVER */
-        .menu a:hover {
-            background-color: #e8ecef;
-        }
-    </style>
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
 
-    <main class="container">
+    <header>
+        <h1>Bienvenue sur mon site</h1>
+        <p>BTS SIO - Exercices et cours</p>
+    </header>
 
-        <h1 class="titre">Bienvenue sur mon site</h1>
+    <main>
 
-        <nav class="menu">
-            <a href="./TP3/TP3.html">TP3</a>
-            <a href="./TP4/TP4.html">TP4</a>
-            <a href="./TP5/TP5.html">TP5</a>
-            <a href="./TP6/TP6.html">TP6</a>
-            <a href="./TP7/TP7.html">TP7</a>
-            <a href="./TP10/TP10.html">TP10</a>
-            <a href="./TP11/TP11.html">TP11</a>
-        </nav>
+        <a href="TP3/TP3.html" class="carte">
+            TP3 - Les balises textes
+        </a>
+
+        <a href="TP4/TP4.html" class="carte">
+            TP4 - Les liens
+        </a>
+
+        <a href="TP5/TP5.html" class="carte">
+            TP5 - Les tableaux
+        </a>
+
+        <a href="TP6/TP6.html" class="carte">
+            TP6 - Les images
+        </a>
+
+        <a href="TP7/TP7.html" class="carte">
+            TP7 - Le zoning
+        </a>
+
+        <a href="TP10/TP10.html" class="carte">
+            TP10 - JS : Les Bases - Devis béton 
+        </a>
+
+        <a href="TP11/TP11.html" class="carte">
+            TP11 - JS avancé
+        </a>
 
     </main>
 
