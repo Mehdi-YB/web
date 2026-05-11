@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercice 2</title>
+    <link rel="stylesheet" href="exo2.css">
+</head>
+<body>
+
+<h1>Exercice 2 - Formulaire</h1>
+
+<form id="formulaireVisite">
+
+    <input type="text" id="nom" placeholder="Nom">
+
+    <input type="text" id="prenom" placeholder="Prénom">
+
+    <select id="etude">
+        <option value="">Choisir une étude</option>
+        <option value="Bac pro">Bac pro</option>
+        <option value="STI">STI</option>
+        <option value="STMG">STMG</option>
+        <option value="Général">Général</option>
+    </select>
+
+    <button type="submit">Ajouter</button>
+
+</form>
+
+<table>
+
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Étude</th>
+        </tr>
+    </thead>
+
+    <tbody id="tableauVisiteurs"></tbody>
+
+</table>
+
+<script src="exo2.js"></script>
+
+<a href="../TP11.html" class="retour">
+    Retour à l'index
+</a>
+
+</body>
+</html>

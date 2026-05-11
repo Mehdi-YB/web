@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercice 4</title>
+    <link rel="stylesheet" href="exo4.css">
+</head>
+<body>
+
+<h1>Exercice 4 - Calendrier</h1>
+
+<div class="parametres">
+
+    <input type="number" id="premierJour" min="1" max="7" value="1" placeholder="Premier jour 1 à 7">
+
+    <input type="number" id="mois" min="1" max="12" value="4" placeholder="Mois 1 à 12">
+
+    <input type="number" id="annee" min="1" value="2024" placeholder="Année">
+
+    <select id="taille">
+        <option value="petit">Petit</option>
+        <option value="moyen" selected>Moyen</option>
+        <option value="grand">Grand</option>
+    </select>
+
+    <input type="color" id="couleurTitre" value="#3498db">
+
+    <input type="color" id="couleurCase" value="#ffffff">
+
+    <button id="genererCalendrier">Générer</button>
+
+</div>
+
+<div id="zoneCalendrier"></div>
+
+<script src="exo4.js"></script>
+
+<a href="../TP11.html" class="retour">
+    Retour à l'index
+</a>
+
+</body>
+</html>

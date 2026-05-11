@@ -176,3 +176,22 @@ td {
         margin-top: 0;
     }
 }
+
+.bouton-retour {
+    display: block;
+    margin-top: 25px;
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    background-color: #3498db;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+}
+
+.bouton-retour:hover {
+    background-color: #2980b9;
+}

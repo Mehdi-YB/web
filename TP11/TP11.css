@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    min-height: 100vh;
+    padding: 40px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+header h1 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 40px;
+}
+
+header p {
+    color: #555;
+    font-size: 18px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.carte {
+    background-color: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 260px;
+}
+
+.carte:hover {
+    transform: translateY(-5px);
+}
+
+.carte h2 {
+    color: #3498db;
+    margin-bottom: 15px;
+}
+
+.carte p {
+    margin-bottom: 20px;
+    color: #444;
+    line-height: 25px;
+}
+
+.carte a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #3ea0e8;
+    color: white;
+    padding: 12px 32px;
+    border-radius: 999px;
+    transition: 0.3s;
+    margin-top: auto;
+    font-weight: bold;
+}
+
+.carte a:hover {
+    background-color: #2980b9;
+}
+
+.zone-retour {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.retour-accueil {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #3ea0e8;
+    color: white;
+    padding: 12px 32px;
+    border-radius: 999px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.retour-accueil:hover {
+    background-color: #2980b9;
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 28px;
+    }
+}
